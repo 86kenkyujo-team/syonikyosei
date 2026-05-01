@@ -22,6 +22,7 @@
     body {
       display: flex;
       justify-content: center;
+      padding-bottom: 0;
       overflow-x: hidden;
     }
 
@@ -65,11 +66,64 @@
       height: 10%;
     }
 
-    .hotspot.message-cta {
+    .hotspot.final-cta {
       left: 5.8%;
-      top: 84.8%;
+      top: 82.5%;
       width: 88.4%;
-      height: 10.8%;
+      height: 11.8%;
+    }
+
+    .sticky-reservation {
+      position: fixed;
+      left: 50%;
+      bottom: 12px;
+      z-index: 10;
+      width: min(calc(100vw - 24px), 366px);
+      min-height: 58px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 22px;
+      border: 3px solid #fff;
+      border-radius: 999px;
+      background: linear-gradient(180deg, #ff9a1f 0%, #ff6b00 100%);
+      box-shadow: 0 10px 24px rgba(217, 91, 0, .34);
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.2;
+      text-decoration: none;
+      transform: translateX(-50%);
+    }
+
+    .sticky-reservation::before {
+      content: "";
+      width: 24px;
+      height: 24px;
+      flex: 0 0 24px;
+      border: 3px solid currentColor;
+      border-radius: 4px;
+      background:
+        linear-gradient(currentColor, currentColor) 4px 8px / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 10px 8px / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 16px 8px / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 4px 15px / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 10px 15px / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 16px 15px / 4px 4px no-repeat,
+        linear-gradient(currentColor, currentColor) 0 5px / 100% 3px no-repeat;
+    }
+
+    .sticky-reservation::after {
+      content: "›";
+      font-size: 34px;
+      line-height: .7;
+      transform: translateY(-1px);
+    }
+
+    .sticky-reservation:focus-visible {
+      outline: 3px solid rgba(36, 48, 68, .35);
+      outline-offset: 4px;
     }
 
     .sr-copy {
@@ -85,9 +139,17 @@
     }
 
     @media (max-width: 390px) {
+      body {
+        padding-bottom: 86px;
+      }
+
       .lp-shell {
         width: 100vw;
         box-shadow: none;
+      }
+
+      .sticky-reservation {
+        display: inline-flex;
       }
     }
   </style>
@@ -104,8 +166,7 @@
     </section>
 
     <section class="lp-section">
-      <img class="lp-image" src="assets/images/section-03-message-cta.png" alt="当院からのメッセージ、当院が選ばれる理由、WEB予約はこちら。">
-      <a class="hotspot message-cta" href="reservation.html" aria-label="WEB予約はこちら">WEB予約はこちら</a>
+      <img class="lp-image" src="assets/images/section-03-message-cta.png" alt="今週の予約空き状況と治療完了までの流れを掲載しています。">
     </section>
 
     <section class="lp-section">
@@ -113,7 +174,8 @@
     </section>
 
     <section class="lp-section">
-      <img class="lp-image" src="assets/images/section-05-flow.png" alt="今週の予約空き状況と治療完了までの流れを掲載しています。">
+      <img class="lp-image" src="assets/images/section-05-flow.png" alt="当院からのメッセージ、当院が選ばれる理由、WEB予約はこちら。">
+      <a class="hotspot final-cta" href="reservation.html" aria-label="WEB予約はこちら">WEB予約はこちら</a>
     </section>
 
     <section class="sr-copy" aria-label="LP内容">
@@ -121,5 +183,6 @@
       <p>選べる2つの小児矯正。お子様の歯並びのお悩み、早期に始めるメリット、治療の選択肢、当院からのメッセージ、料金体系と医療費控除、予約空き状況、治療完了までの流れを掲載しています。</p>
     </section>
   </main>
+  <a class="sticky-reservation" href="reservation.html" aria-label="WEB予約はこちら">WEB予約はこちら</a>
 </body>
 </html>
