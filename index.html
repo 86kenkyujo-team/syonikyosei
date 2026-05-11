@@ -80,6 +80,13 @@
       height: 8.2%;
     }
 
+    .hotspot.cta-11 {
+      left: 3.5%;
+      top: 89.1%;
+      width: 93%;
+      height: 7.6%;
+    }
+
     .map-section {
       line-height: 0;
     }
@@ -168,7 +175,7 @@
       border: 0;
     }
 
-    @media (max-width: 390px) {
+    @media (max-width: 768px) {
       body {
         padding-bottom: 86px;
       }
@@ -180,6 +187,12 @@
 
       .sticky-reservation {
         display: inline-flex;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .sticky-reservation {
+        width: min(calc(100vw - 24px), 366px);
       }
     }
   </style>
@@ -227,6 +240,7 @@
 
     <section class="lp-section">
       <img class="lp-image" src="assets/images/lp-11.png" alt="さくら歯科について。お子さまの歯並び相談に対応しています。医院外観、院内の雰囲気、医院の場所、診療時間を掲載しています。">
+      <a class="hotspot cta-11" href="reservation.html" aria-label="WEB予約はこちら">WEB予約はこちら</a>
     </section>
 
     <section class="lp-section">
